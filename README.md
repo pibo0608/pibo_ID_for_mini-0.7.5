@@ -39,7 +39,6 @@
 │   ├── furnace.json    # 熔炼配方
 │   ├── npctrade.json   # 交易数据
 │   └── achievement.json# 成就数据（含前置关系）
-├── assets/             # 可选资源（如 tb.css）
 └── README.md           # 本文档
 
 
