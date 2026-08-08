@@ -1,0 +1,1921 @@
+[
+  {
+    "ID": 11000,
+    "Name": "空手",
+    "Type": 0,
+    "Level": 1,
+    "Efficiency": 1,
+    "AttackType": 0,
+    "Attack": 1,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11001,
+    "Name": "木斧",
+    "Type": 1,
+    "Level": 1,
+    "Efficiency": 15,
+    "AttackType": 0,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 600,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 206,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 207,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 208,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 209,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 210,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 211,
+        "RepairAmount": 200
+      }
+    ]
+  },
+  {
+    "ID": 11002,
+    "Name": "石斧",
+    "Type": 1,
+    "Level": 2,
+    "Efficiency": 22.5,
+    "AttackType": 0,
+    "Attack": 25,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 1320,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 9,
+    "Repairs": [
+      {
+        "RepairID": 104,
+        "RepairAmount": 440
+      }
+    ]
+  },
+  {
+    "ID": 11003,
+    "Name": "铁斧",
+    "Type": 1,
+    "Level": 3,
+    "Efficiency": 33.75,
+    "AttackType": 0,
+    "Attack": 30,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2510,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 840
+      }
+    ]
+  },
+  {
+    "ID": 11004,
+    "Name": "金斧",
+    "Type": 1,
+    "Level": 4,
+    "Efficiency": 75.95,
+    "AttackType": 0,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 330,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 2.2,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 110
+      }
+    ]
+  },
+  {
+    "ID": 11005,
+    "Name": "钻石斧",
+    "Type": 1,
+    "Level": 5,
+    "Efficiency": 101.26,
+    "AttackType": 0,
+    "Attack": 35,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 31240,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 104,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 3124
+      }
+    ]
+  },
+  {
+    "ID": 11011,
+    "Name": "木镐",
+    "Type": 2,
+    "Level": 1,
+    "Efficiency": 15,
+    "AttackType": 0,
+    "Attack": 15,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 600,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 206,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 207,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 208,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 209,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 210,
+        "RepairAmount": 200
+      },
+      {
+        "RepairID": 211,
+        "RepairAmount": 200
+      }
+    ]
+  },
+  {
+    "ID": 11012,
+    "Name": "石镐",
+    "Type": 2,
+    "Level": 2,
+    "Efficiency": 22.5,
+    "AttackType": 0,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 1320,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 9,
+    "Repairs": [
+      {
+        "RepairID": 104,
+        "RepairAmount": 440
+      }
+    ]
+  },
+  {
+    "ID": 11013,
+    "Name": "铁镐",
+    "Type": 2,
+    "Level": 3,
+    "Efficiency": 33.75,
+    "AttackType": 0,
+    "Attack": 25,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2510,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 840
+      }
+    ]
+  },
+  {
+    "ID": 11014,
+    "Name": "金镐",
+    "Type": 2,
+    "Level": 4,
+    "Efficiency": 75.95,
+    "AttackType": 0,
+    "Attack": 15,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 330,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 2.2,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 110
+      }
+    ]
+  },
+  {
+    "ID": 11015,
+    "Name": "钻石镐",
+    "Type": 2,
+    "Level": 5,
+    "Efficiency": 101.26,
+    "AttackType": 0,
+    "Attack": 30,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 31240,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 104,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 3124
+      }
+    ]
+  },
+  {
+    "ID": 11021,
+    "Name": "木铲",
+    "Type": 3,
+    "Level": 1,
+    "Efficiency": 15,
+    "AttackType": 0,
+    "Attack": 10,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 600,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 206,
+        "RepairAmount": 600
+      },
+      {
+        "RepairID": 207,
+        "RepairAmount": 600
+      },
+      {
+        "RepairID": 208,
+        "RepairAmount": 600
+      },
+      {
+        "RepairID": 209,
+        "RepairAmount": 600
+      },
+      {
+        "RepairID": 210,
+        "RepairAmount": 600
+      },
+      {
+        "RepairID": 211,
+        "RepairAmount": 600
+      }
+    ]
+  },
+  {
+    "ID": 11022,
+    "Name": "石铲",
+    "Type": 3,
+    "Level": 2,
+    "Efficiency": 22.5,
+    "AttackType": 0,
+    "Attack": 15,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 1320,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 9,
+    "Repairs": [
+      {
+        "RepairID": 104,
+        "RepairAmount": 1320
+      }
+    ]
+  },
+  {
+    "ID": 11023,
+    "Name": "铁铲",
+    "Type": 3,
+    "Level": 3,
+    "Efficiency": 33.75,
+    "AttackType": 0,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2510,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 2510
+      }
+    ]
+  },
+  {
+    "ID": 11024,
+    "Name": "金铲",
+    "Type": 3,
+    "Level": 4,
+    "Efficiency": 75.95,
+    "AttackType": 0,
+    "Attack": 10,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 330,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 2.2,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 330
+      }
+    ]
+  },
+  {
+    "ID": 11025,
+    "Name": "钻石铲",
+    "Type": 3,
+    "Level": 5,
+    "Efficiency": 101.26,
+    "AttackType": 0,
+    "Attack": 25,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 31240,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 104,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 31240
+      }
+    ]
+  },
+  {
+    "ID": 11031,
+    "Name": "木锄",
+    "Type": 4,
+    "Level": 1,
+    "Efficiency": 15,
+    "AttackType": 0,
+    "Attack": 5,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 600,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 206,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 207,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 208,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 209,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 210,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 211,
+        "RepairAmount": 300
+      }
+    ]
+  },
+  {
+    "ID": 11032,
+    "Name": "石锄",
+    "Type": 4,
+    "Level": 2,
+    "Efficiency": 22.5,
+    "AttackType": 0,
+    "Attack": 5,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 1320,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 9,
+    "Repairs": [
+      {
+        "RepairID": 104,
+        "RepairAmount": 660
+      }
+    ]
+  },
+  {
+    "ID": 11033,
+    "Name": "铁锄",
+    "Type": 4,
+    "Level": 3,
+    "Efficiency": 33.75,
+    "AttackType": 0,
+    "Attack": 5,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2510,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 1260
+      }
+    ]
+  },
+  {
+    "ID": 11034,
+    "Name": "金锄",
+    "Type": 4,
+    "Level": 4,
+    "Efficiency": 75.95,
+    "AttackType": 0,
+    "Attack": 5,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 330,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 2.2,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 170
+      }
+    ]
+  },
+  {
+    "ID": 11035,
+    "Name": "钻石锄",
+    "Type": 4,
+    "Level": 5,
+    "Efficiency": 101.26,
+    "AttackType": 0,
+    "Attack": 5,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 31240,
+    "CollectDuration": 1,
+    "AtkDuration": 2,
+    "RepairExp": null,
+    "Score": 104,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 7810
+      }
+    ]
+  },
+  {
+    "ID": 11050,
+    "Name": "桶",
+    "Type": 12,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11051,
+    "Name": "水桶",
+    "Type": 12,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11052,
+    "Name": "岩浆桶",
+    "Type": 12,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 2,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11055,
+    "Name": "打火石",
+    "Type": 13,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 640,
+    "CollectDuration": 1,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": []
+  },
+  {
+    "ID": 11056,
+    "Name": "剪刀",
+    "Type": 5,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2380,
+    "CollectDuration": 1,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": []
+  },
+  {
+    "ID": 12001,
+    "Name": "木剑",
+    "Type": 6,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 25,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 600,
+    "CollectDuration": 2,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 206,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 207,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 208,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 209,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 210,
+        "RepairAmount": 300
+      },
+      {
+        "RepairID": 211,
+        "RepairAmount": 300
+      }
+    ]
+  },
+  {
+    "ID": 12002,
+    "Name": "石剑",
+    "Type": 6,
+    "Level": 2,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 30,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 1320,
+    "CollectDuration": 2,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 9,
+    "Repairs": [
+      {
+        "RepairID": 104,
+        "RepairAmount": 660
+      }
+    ]
+  },
+  {
+    "ID": 12003,
+    "Name": "铁剑",
+    "Type": 6,
+    "Level": 3,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 35,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 2510,
+    "CollectDuration": 2,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 16.5,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 1260
+      }
+    ]
+  },
+  {
+    "ID": 12004,
+    "Name": "金剑",
+    "Type": 6,
+    "Level": 4,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 25,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 330,
+    "CollectDuration": 2,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 2.2,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 170
+      }
+    ]
+  },
+  {
+    "ID": 12005,
+    "Name": "钻石剑",
+    "Type": 6,
+    "Level": 5,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 40,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 31240,
+    "CollectDuration": 2,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 104,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 7810
+      }
+    ]
+  },
+  {
+    "ID": 12050,
+    "Name": "木弓",
+    "Type": 7,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 1,
+    "Attack": 20,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 3850,
+    "CollectDuration": 0,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": 25.5,
+    "Repairs": [
+      {
+        "RepairID": 710,
+        "RepairAmount": 1290
+      }
+    ]
+  },
+  {
+    "ID": 12051,
+    "Name": "箭",
+    "Type": 14,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 1,
+    "Attack": 10,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12052,
+    "Name": "鸡蛋",
+    "Type": 14,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 1,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12054,
+    "Name": "雪球",
+    "Type": 14,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 1,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": 0,
+    "CollectDuration": 0,
+    "AtkDuration": 1,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12201,
+    "Name": "皮革头盔",
+    "Type": 8,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 5,
+    "ArmorRange": 5,
+    "ArmorExplode": 5,
+    "Duration": 560,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 11307,
+        "RepairAmount": 120
+      }
+    ]
+  },
+  {
+    "ID": 12202,
+    "Name": "皮革胸甲",
+    "Type": 9,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 10,
+    "ArmorRange": 10,
+    "ArmorExplode": 10,
+    "Duration": 810,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 11307,
+        "RepairAmount": 110
+      }
+    ]
+  },
+  {
+    "ID": 12203,
+    "Name": "皮革护腿",
+    "Type": 10,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 10,
+    "ArmorRange": 10,
+    "ArmorExplode": 10,
+    "Duration": 760,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 11307,
+        "RepairAmount": 110
+      }
+    ]
+  },
+  {
+    "ID": 12204,
+    "Name": "皮革靴子",
+    "Type": 11,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 5,
+    "ArmorRange": 5,
+    "ArmorExplode": 5,
+    "Duration": 660,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 4,
+    "Repairs": [
+      {
+        "RepairID": 11307,
+        "RepairAmount": 170
+      }
+    ]
+  },
+  {
+    "ID": 12205,
+    "Name": "皮革披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12206,
+    "Name": "红色皮革披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 6000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 1500
+      }
+    ]
+  },
+  {
+    "ID": 12207,
+    "Name": "黑色皮革披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 6000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 1500
+      }
+    ]
+  },
+  {
+    "ID": 12208,
+    "Name": "蓝色皮革披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 6000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 1500
+      }
+    ]
+  },
+  {
+    "ID": 12209,
+    "Name": "白色皮革披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 6000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 1500
+      }
+    ]
+  },
+  {
+    "ID": 12211,
+    "Name": "锁链头盔",
+    "Type": 8,
+    "Level": 2,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 10,
+    "ArmorRange": 10,
+    "ArmorExplode": 10,
+    "Duration": 1000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.08,
+    "Repairs": [
+      {
+        "RepairID": 500,
+        "RepairAmount": 340
+      }
+    ]
+  },
+  {
+    "ID": 12212,
+    "Name": "锁链胸甲",
+    "Type": 9,
+    "Level": 2,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 20,
+    "ArmorRange": 20,
+    "ArmorExplode": 20,
+    "Duration": 1310,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.08,
+    "Repairs": [
+      {
+        "RepairID": 500,
+        "RepairAmount": 310
+      }
+    ]
+  },
+  {
+    "ID": 12213,
+    "Name": "锁链护腿",
+    "Type": 10,
+    "Level": 2,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 1260,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.08,
+    "Repairs": [
+      {
+        "RepairID": 500,
+        "RepairAmount": 330
+      }
+    ]
+  },
+  {
+    "ID": 12214,
+    "Name": "锁链靴子",
+    "Type": 11,
+    "Level": 2,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 5,
+    "ArmorRange": 5,
+    "ArmorExplode": 5,
+    "Duration": 1620,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.08,
+    "Repairs": [
+      {
+        "RepairID": 500,
+        "RepairAmount": 490
+      }
+    ]
+  },
+  {
+    "ID": 12215,
+    "Name": "锁链披风",
+    "Type": 16,
+    "Level": null,
+    "Efficiency": null,
+    "AttackType": null,
+    "Attack": null,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12221,
+    "Name": "铁头盔",
+    "Type": 8,
+    "Level": 3,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 1660,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.15,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 340
+      }
+    ]
+  },
+  {
+    "ID": 12222,
+    "Name": "铁胸甲",
+    "Type": 9,
+    "Level": 3,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 25,
+    "ArmorRange": 25,
+    "ArmorExplode": 25,
+    "Duration": 2410,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.15,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 310
+      }
+    ]
+  },
+  {
+    "ID": 12223,
+    "Name": "铁护腿",
+    "Type": 10,
+    "Level": 3,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 20,
+    "ArmorRange": 20,
+    "ArmorExplode": 20,
+    "Duration": 2260,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.15,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 330
+      }
+    ]
+  },
+  {
+    "ID": 12224,
+    "Name": "铁靴子",
+    "Type": 11,
+    "Level": 3,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 10,
+    "ArmorRange": 10,
+    "ArmorExplode": 10,
+    "Duration": 1960,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.15,
+    "Repairs": [
+      {
+        "RepairID": 11209,
+        "RepairAmount": 490
+      }
+    ]
+  },
+  {
+    "ID": 12225,
+    "Name": "铁披风",
+    "Type": 16,
+    "Level": null,
+    "Efficiency": null,
+    "AttackType": null,
+    "Attack": null,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12231,
+    "Name": "金头盔",
+    "Type": 8,
+    "Level": 4,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 10,
+    "ArmorRange": 10,
+    "ArmorExplode": 10,
+    "Duration": 780,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.06,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 160
+      }
+    ]
+  },
+  {
+    "ID": 12232,
+    "Name": "金胸甲",
+    "Type": 9,
+    "Level": 4,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 1130,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.06,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 150
+      }
+    ]
+  },
+  {
+    "ID": 12233,
+    "Name": "金护腿",
+    "Type": 10,
+    "Level": 4,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 1060,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.06,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 160
+      }
+    ]
+  },
+  {
+    "ID": 12234,
+    "Name": "金靴子",
+    "Type": 11,
+    "Level": 4,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 5,
+    "ArmorRange": 5,
+    "ArmorExplode": 5,
+    "Duration": 920,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.06,
+    "Repairs": [
+      {
+        "RepairID": 11207,
+        "RepairAmount": 230
+      }
+    ]
+  },
+  {
+    "ID": 12235,
+    "Name": "金披风",
+    "Type": 16,
+    "Level": null,
+    "Efficiency": null,
+    "AttackType": null,
+    "Attack": null,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12241,
+    "Name": "钻石头盔",
+    "Type": 8,
+    "Level": 5,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 7280,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.32,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 1460
+      }
+    ]
+  },
+  {
+    "ID": 12242,
+    "Name": "钻石胸甲",
+    "Type": 9,
+    "Level": 5,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 30,
+    "ArmorRange": 30,
+    "ArmorExplode": 30,
+    "Duration": 10580,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.32,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 1340
+      }
+    ]
+  },
+  {
+    "ID": 12243,
+    "Name": "钻石护腿",
+    "Type": 10,
+    "Level": 5,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 25,
+    "ArmorRange": 25,
+    "ArmorExplode": 25,
+    "Duration": 9920,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.32,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 1420
+      }
+    ]
+  },
+  {
+    "ID": 12244,
+    "Name": "钻石靴子",
+    "Type": 11,
+    "Level": 5,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 15,
+    "ArmorRange": 15,
+    "ArmorExplode": 15,
+    "Duration": 8600,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": 0.32,
+    "Repairs": [
+      {
+        "RepairID": 11203,
+        "RepairAmount": 2160
+      }
+    ]
+  },
+  {
+    "ID": 12245,
+    "Name": "钻石披风",
+    "Type": 16,
+    "Level": null,
+    "Efficiency": null,
+    "AttackType": null,
+    "Attack": null,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11805,
+    "Name": "书",
+    "Type": 17,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11807,
+    "Name": "附魔书",
+    "Type": 17,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11801,
+    "Name": "火之书",
+    "Type": 18,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 2,
+    "Attack": 40,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 11810,
+    "Name": "马鞍",
+    "Type": 19,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12250,
+    "Name": "铁马铠",
+    "Type": 20,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": null,
+    "ArmorRange": null,
+    "ArmorExplode": null,
+    "Duration": null,
+    "CollectDuration": null,
+    "AtkDuration": null,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": []
+  },
+  {
+    "ID": 12254,
+    "Name": "迷你披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12255,
+    "Name": "4399披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12256,
+    "Name": "阿里游戏披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12257,
+    "Name": "华为披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12258,
+    "Name": "百度披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12259,
+    "Name": "魅族披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12260,
+    "Name": "小米披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12261,
+    "Name": "oppo披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12262,
+    "Name": "360披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12263,
+    "Name": "腾讯披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12264,
+    "Name": "酷狗披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12265,
+    "Name": "金立披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12266,
+    "Name": "vivo披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  },
+  {
+    "ID": 12267,
+    "Name": "乐视披风",
+    "Type": 16,
+    "Level": 1,
+    "Efficiency": 0,
+    "AttackType": 0,
+    "Attack": 0,
+    "ArmorPunch": 0,
+    "ArmorRange": 0,
+    "ArmorExplode": 0,
+    "Duration": 3000,
+    "CollectDuration": 0,
+    "AtkDuration": 0,
+    "RepairExp": null,
+    "Score": null,
+    "Repairs": [
+      {
+        "RepairID": 11309,
+        "RepairAmount": 700
+      }
+    ]
+  }
+]

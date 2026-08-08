@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>异星迷航方块群系查询</title>
+  <link rel="stylesheet" href="assets/tb.css">
+  <style>
+    @font-face {
+      font-family: 'YouYuan';
+      src: url('data/youyuan.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root { --primary: #7c3aed; --primary-light: #ede9fe; --card-radius: 6px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #f5f7fa; font-family: 'YouYuan', 'Microsoft YaHei', sans-serif; color: #1e293b; line-height: 1.6; padding: 1rem; margin: 0; }
+    .container { max-width: 520px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    @media (min-width: 501px) { .container { max-width: 95%; } }
+    @media (min-width: 768px) { .container { max-width: 92%; } }
+    @media (min-width: 1024px) { .container { max-width: 88%; } }
+    @media (min-width: 1400px) { .container { max-width: 85%; } }
+
+    .header { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background: #ffffff; border-radius: var(--card-radius); box-shadow: 0 8px 18px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02); }
+    .header-title { display: flex; align-items: center; gap: 0.35rem; font-size: 1.1rem; font-weight: 600; color: #1e293b; }
+    .header-actions { display: flex; gap: 0.3rem; }
+    .icon-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--card-radius); color: #64748b; cursor: pointer; transition: all 0.15s ease; font-size: 16px; }
+    .icon-btn:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+
+    .glass-card { background: #ffffff; border-radius: var(--card-radius); box-shadow: 0 8px 18px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02); transition: all 0.2s ease; }
+    .main-card { padding: 1.1rem; flex-shrink: 0; }
+    .card-header { margin-bottom: 0.85rem; border-bottom: 1px solid #eef1f5; padding-bottom: 0.65rem; }
+    .card-title { font-size: 1.3rem; font-weight: 600; color: #1e293b; letter-spacing: -0.2px; }
+    .card-subtitle { color: #64748b; font-size: 0.75rem; margin-top: 0.3rem; }
+
+    .version-section { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.85rem; padding: 0.6rem 0.75rem; background: #f8fafc; border-radius: var(--card-radius); border: 1px solid #eef1f5; }
+    .version-label { font-size: 0.75rem; color: #64748b; font-weight: 500; white-space: nowrap; }
+    .version-seg { display: flex; gap: 0.3rem; padding: 0.2rem; background: #fff; border-radius: var(--card-radius); border: 1px solid #e2e8f0; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .version-seg::-webkit-scrollbar { display: none; }
+    .version-btn { padding: 0.35rem 0.75rem; font-size: 0.75rem; font-weight: 500; border: none; border-radius: var(--card-radius); cursor: pointer; transition: all 0.15s ease; background: transparent; color: #64748b; font-family: inherit; white-space: nowrap; flex-shrink: 0; }
+    .version-btn:hover { color: var(--primary); background: var(--primary-light); }
+    .version-btn.active { background: var(--primary); color: #fff; }
+
+    .search-section { margin-bottom: 0.75rem; }
+    .input-wrapper { position: relative; display: flex; align-items: center; }
+    .search-input { width: 100%; padding: 0.55rem 0.75rem 0.55rem 2rem; font-size: 0.8rem; color: #1e293b; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--card-radius); outline: none; transition: all 0.2s ease; font-family: inherit; }
+    .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(124,58,237,0.1); background: #fff; }
+    .search-input::placeholder { color: #94a3b8; }
+    .search-icon { position: absolute; left: 0.55rem; color: #94a3b8; font-size: 16px; pointer-events: none; }
+    .clear-btn { position: absolute; right: 0.4rem; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #e2e8f0; border: none; border-radius: 50%; color: #64748b; cursor: pointer; opacity: 0; transition: all 0.15s ease; }
+    .search-input:not(:placeholder-shown) ~ .clear-btn { opacity: 1; }
+    .clear-btn:hover { background: #cbd5e1; color: #1e293b; }
+
+    .actions { display: flex; gap: 0.55rem; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.3rem; padding: 0.55rem 1rem; font-size: 0.8rem; font-weight: 600; border: none; border-radius: var(--card-radius); cursor: pointer; transition: all 0.2s ease; font-family: inherit; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: #6d28d9; }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-secondary { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+    .btn-secondary:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+    .status-text { font-size: 0.7rem; color: #64748b; margin-left: auto; }
+
+    .results-card { margin-top: 0; overflow: hidden; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    .results-header { display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 0.75rem; background: #f8fafc; border-bottom: 1px solid #eef1f5; }
+    .results-header .icon-emoji { color: var(--primary); font-size: 18px; }
+    .results-title { font-size: 0.8rem; font-weight: 600; color: #1e293b; }
+    .results-count { margin-left: auto; font-size: 0.65rem; color: var(--primary); background: var(--primary-light); padding: 0.15rem 0.5rem; border-radius: var(--card-radius); font-weight: 600; }
+    .results-body { padding: 0.6rem; flex: 1; min-height: 0; overflow-y: auto; }
+    .results-body::-webkit-scrollbar { width: 4px; }
+    .results-body::-webkit-scrollbar-track { background: transparent; }
+    .results-body::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 2px; }
+
+    .result-item { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0.6rem; margin-bottom: 0.35rem; background: #f8fafc; border-radius: var(--card-radius); border-left: 3px solid #e2e8f0; cursor: default; transition: all 0.15s ease; }
+    .result-item:hover { background: var(--primary-light); border-left-color: var(--primary); }
+    .result-item:last-child { margin-bottom: 0; }
+    .result-info { flex: 1; min-width: 0; }
+    .result-name { font-size: 0.8rem; font-weight: 600; color: #1e293b; line-height: 1.3; }
+    .result-id { font-size: 0.65rem; color: #64748b; font-family: 'Consolas', 'Monaco', monospace; }
+    .result-desc { font-size: 0.7rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.4; }
+
+    .empty-state { text-align: center; padding: 2rem 1rem; color: #94a3b8; }
+    .empty-state .icon-emoji { font-size: 40px; margin-bottom: 0.5rem; opacity: 0.5; }
+    .empty-text { font-size: 0.8rem; }
+
+    .footer { text-align: center; padding: 0.6rem 1rem; color: #94a3b8; font-size: 0.7rem; flex-shrink: 0; }
+
+    .snackbar { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(20px); padding: 0.55rem 1rem; background: #1e293b; color: #f1f5f9; border-radius: var(--card-radius); font-size: 0.75rem; font-weight: 500; z-index: 2000; opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .snackbar.show { transform: translateX(-50%) translateY(0); opacity: 1; pointer-events: auto; }
+    .snackbar.success { background: #166534; color: #f0fdf4; }
+    .snackbar.error { background: #991b1b; color: #fef2f2; }
+
+    .icon-emoji { font-size: 1em; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+
+    @media (max-width: 360px) { body { padding: 0.4rem; } .header { padding: 0.5rem 0.6rem; } .header-title { font-size: 0.9rem; } .icon-btn { width: 28px; height: 28px; font-size: 14px; } .main-card { padding: 0.6rem; } .card-title { font-size: 0.95rem; } .card-subtitle { font-size: 0.65rem; } .version-section { padding: 0.4rem 0.5rem; gap: 0.3rem; } .version-label { font-size: 0.65rem; } .version-btn { padding: 0.25rem 0.4rem; font-size: 0.65rem; } .search-input { padding: 0.45rem 0.6rem 0.45rem 1.6rem; font-size: 0.75rem; } .search-icon { left: 0.4rem; font-size: 14px; } .clear-btn { width: 20px; height: 20px; right: 0.3rem; } .actions { gap: 0.4rem; } .btn { padding: 0.5rem; font-size: 0.7rem; min-height: 36px; } .results-header { padding: 0.5rem 0.6rem; } .results-title { font-size: 0.7rem; } .results-count { font-size: 0.6rem; padding: 0.1rem 0.4rem; } .results-body { padding: 0.4rem; } .result-item { padding: 0.35rem 0.4rem; gap: 0.4rem; margin-bottom: 0.25rem; } .result-name { font-size: 0.7rem; } .result-id { font-size: 0.55rem; } .footer { padding: 0.8rem 0.5rem; font-size: 0.6rem; } }
+      .view-toggle { display: flex; gap: 0.2rem; }
+    .view-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--card-radius); color: #64748b; cursor: pointer; font-size: 14px; padding: 0; }
+    .view-btn:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+    .view-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="header-title">
+        <span><span style="color: var(--primary);">异星迷航</span>方块群系查询</span>
+      </div>
+      <div class="header-actions">
+        <!-- ========== 返回ID查询页面 ========== -->
+        <button class="icon-btn" id="backBtn" title="返回ID查询">
+          <span class="icon-emoji">🏠</span>
+        </button>
+        <!-- ========== 返回ID查询页面结束 ========== -->
+        <button class="icon-btn" id="refreshBtn" title="刷新页面">
+          <span class="icon-emoji">🔄</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="glass-card main-card">
+      <div class="card-header">
+        <h1 class="card-title" id="cardTitle">方块查询</h1>
+        <p class="card-subtitle" id="cardSubtitle">支持方块名部分匹配或ID搜索；查看硬度与掉落物</p>
+      </div>
+
+      <div class="version-section">
+        <span class="version-label">查找内容：</span>
+        <div class="version-seg">
+          <button class="version-btn active" id="blockBtn" data-type="block">方块</button>
+          <button class="version-btn" id="biomeBtn" data-type="biome">群系</button>
+          <button class="version-btn" id="smeltBtn" data-type="smelt">熔炼</button>
+          <button class="version-btn" id="tradeBtn" data-type="trade">交易</button>
+          <button class="version-btn" id="achieveBtn" data-type="achieve">成就</button>
+        </div>
+      </div>
+
+      <div class="search-section">
+        <div class="input-wrapper">
+          <input type="text" class="search-input" id="nameInput" placeholder="输入名称或ID搜索…" autocomplete="off">
+          <span class="icon-emoji search-icon">🔍</span>
+          <button class="clear-btn" id="clearInputBtn">
+            <span class="icon-emoji">✕</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="searchBtn">
+          <span class="icon-emoji">🔍</span>
+          <span class="btn-text">搜索</span>
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">
+          <span class="icon-emoji">❌</span>
+          <span>清空</span>
+        </button>
+        <span class="status-text" id="status"></span>
+      </div>
+    </div>
+
+    <div class="glass-card results-card">
+      <div class="results-header">
+        <span class="icon-emoji">📋</span>
+        <span class="results-title" id="resultsTitle">搜索结果</span>
+        <span class="results-count" id="countBadge"></span>
+        <div class="view-toggle" id="viewToggle" style="display:none;margin-left:auto;">
+          <button class="view-btn active" data-view="grid" title="网格视图">⊞</button>
+          <button class="view-btn" data-view="list" title="列表视图">☰</button>
+        </div>
+      </div>
+      <div class="results-body" id="resultBody">
+        <div class="empty-state">
+          <span class="icon-emoji">📦</span>
+          <p class="empty-text">加载中...</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <div>异星迷航 · 方块群系查询</div>
+    </footer>
+  </div>
+
+  <div class="snackbar" id="snackbar"></div>
+
+  <script>
+  var DATA_CACHE = { items: [] };
+  var currentContentType = localStorage.getItem('query-content-type') || 'block';
+  var searchTimer = null;
+
+  var CONFIG = {
+    block:   { file: 'data/block.json',   label: '方块',   title: '方块查询', subtitle: '支持方块名部分匹配或ID搜索；查看硬度与掉落物' },
+    biome:   { file: 'data/biome.json',   label: '群系',   title: '群系查询', subtitle: '支持群系名部分匹配或ID搜索；查看地形与生成特征' },
+    smelt:   { file: 'data/furnace.json', label: '熔炼',   title: '熔炼查询', subtitle: '支持配方名部分匹配或ID搜索；查看材料、产物与热量' },
+    trade:   { file: 'data/npctrade.json',label: '交易',   title: '交易查询', subtitle: '支持交易名部分匹配或ID搜索；查看NPC与价格区间' },
+    achieve: { file: 'data/achievement.json', label: '成就', title: '成就查询', subtitle: '支持成就名部分匹配或ID搜索；查看条件与奖励', views: true }
+  };
+  var currentView = localStorage.getItem('achieve-view') || 'grid';
+
+  function escapeHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  }
+
+  function renderColorCodes(text) {
+    if (!text) return '';
+    return text.replace(/#c([0-9A-Fa-f]{6})([^#]*)#n/g, '<span style="color:#$1">$2</span>')
+               .replace(/#G([^#]*)#n/g, '<span style="color:#00ff00">$1</span>');
+  }
+
+  function showSnackbar(msg, type) {
+    type = type || 'success';
+    var el = document.getElementById('snackbar');
+    el.textContent = msg;
+    el.className = 'snackbar ' + type;
+    el.classList.add('show');
+    setTimeout(function() { el.classList.remove('show'); }, 2500);
+  }
+
+  function setStatus(text) { document.getElementById('status').textContent = text || ''; }
+  function setCount(text) { document.getElementById('countBadge').textContent = text || ''; }
+  function getItems() { return DATA_CACHE.items || []; }
+
+  function findItemById(id) {
+    var items = getItems();
+    for (var i = 0; i < items.length; i++) if (String(items[i].ID) === String(id)) return items[i];
+    return null;
+  }
+
+  function loadData(type) {
+    type = type || 'block';
+    var cfg = CONFIG[type];
+    if (!cfg) { showSnackbar('未知类型: ' + type, 'error'); DATA_CACHE.items = []; return Promise.resolve([]); }
+    return fetch(cfg.file).then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    }).then(function(text) {
+      if (!text || !text.trim()) throw new Error('空响应');
+      var data = JSON.parse(text);
+      DATA_CACHE.items = Array.isArray(data) ? data : (data && typeof data === 'object' ? (data[Object.keys(data)[0]] || []) : []);
+      return DATA_CACHE.items;
+    }).catch(function(err) {
+      console.error('加载失败:', err);
+      showSnackbar('加载失败: ' + (err.message || '未知错误'), 'error');
+      DATA_CACHE.items = [];
+      return [];
+    });
+  }
+
+  function setContentType(type) {
+    currentContentType = type;
+    localStorage.setItem('query-content-type', type);
+    var cfg = CONFIG[type] || CONFIG.block;
+    document.getElementById('cardTitle').textContent = cfg.title;
+    document.getElementById('cardSubtitle').textContent = cfg.subtitle;
+    document.querySelectorAll('.version-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.type === type);
+    });
+    var toggle = document.getElementById('viewToggle');
+    if (toggle) toggle.style.display = (cfg.views) ? 'flex' : 'none';
+  }
+
+  function renderExtra(type, item) {
+    var html = '';
+    function line(label, val) { if (val !== undefined && val !== null) html += '<div class="result-desc">' + label + ': ' + val + '</div>'; }
+    function bool(label, val) { if (val !== undefined && val !== null) html += '<div class="result-desc">' + label + ': ' + (val ? '✓' : '✗') + '</div>'; }
+
+    if (type === 'block') {
+      line('ID', item.ID);
+      line('名称', item.Name);
+      line('备注', item.Note);
+      line('类型', item.Type);
+      line('纹理组', item.TextureGroup);
+      line('点击碰撞', item.ClickCollide);
+      line('移动碰撞', item.MoveCollide);
+      line('方块流动', item.BlockFlow);
+      line('推动标志', item.PushFlag);
+      line('重力影响', item.GravityEffect);
+      line('放置方向', item.PlaceDir);
+      bool('可替换', item.Replaceable);
+      line('防爆', item.AntiExplode);
+      line('硬度', item.Hardness);
+      line('滑度', item.Slipperiness);
+      bool('可再生', item.Reborn);
+      line('燃烧速度', item.BurnSpeed);
+      line('着火', item.CatchFire);
+      line('能量状态', item.PowerState);
+      // 新格式：单独字段
+      line('工具掉落1', item.ToolMineDrop1);
+      line('掉落概率1', item.ToolMineProb1);
+      line('工具掉落2', item.ToolMineDrop2);
+      line('掉落概率2', item.ToolMineProb2);
+      line('空手掉落', item.HandMineDrop);
+      line('空手概率', item.HandMineProb);
+      // 旧格式：数组（兼容）
+      if (item.ToolDrops && item.ToolDrops.length) {
+        var drops = item.ToolDrops.map(function(d) {
+          var id = (typeof d === 'object' && d) ? d.ItemID : d;
+          var it = findItemById(id); return it ? it.Name : ('ID:' + id);
+        }).join(', ');
+        html += '<div class="result-desc">工具掉落: ' + escapeHtml(drops) + '</div>';
+      }
+      if (item.HandDrops && item.HandDrops.length) {
+        var drops = item.HandDrops.map(function(d) {
+          var id = (typeof d === 'object' && d) ? d.ItemID : d;
+          var it = findItemById(id); return it ? it.Name : ('ID:' + id);
+        }).join(', ');
+        html += '<div class="result-desc">空手掉落: ' + escapeHtml(drops) + '</div>';
+      }
+      line('挖掘经验', item.MineExp);
+      line('经验概率', item.MineExpOdds);
+      line('覆盖邻居', item.CoverNeighbor);
+      line('光线衰减', item.LightAtten);
+      if (item.LightSrc) line('光源亮度', item.LightSrc);
+      line('使用邻居光', item.UseNeighborLight);
+      line('高度', item.Height);
+      line('纹理1', item.Texture1);
+      line('纹理2', item.Texture2);
+      line('行走音效', item.WalkSound);
+      line('挖掘音效', item.DigSound);
+      line('放置音效', item.PlaceSound);
+      bool('精准掉落', item.PreciseDrop);
+      if (item.MineTool > 0) html += '<div class="result-desc">需工具挖掘: ✓</div>';
+      line('小地图颜色', item.MiniColor);
+      line('分数', item.Score);
+      line('效率', item.Efficiency);
+      line('纹理缺失', item.TextureMissing);
+      line('功能问题', item.FunctionIssue);
+    } else if (type === 'biome') {
+      line('类型', item.TypeName);
+      if (item.MinHeight !== undefined && item.MaxHeight !== undefined) line('地形高度', item.MinHeight + ' ~ ' + item.MaxHeight);
+      line('温度', item.Heat);
+      line('湿度', item.Humid);
+      if (item.EnableRain !== undefined) html += '<div class="result-desc">降雨: ' + (item.EnableRain ? '✓' : '✗') + ' · 降雪: ' + (item.EnableSnow ? '✓' : '✗') + '</div>';
+      if (item.GrassColor) html += '<div class="result-desc">草地色: #' + item.GrassColor + ' · 水色: #' + (item.WaterColor || 'default') + '</div>';
+      if (item.ChunkSpawns) {
+        var list = []; for (var k in item.ChunkSpawns) if (item.ChunkSpawns[k] > 0) list.push(k + ':' + item.ChunkSpawns[k]);
+        if (list.length) html += '<div class="result-desc">生成: ' + list.slice(0, 5).join(', ') + (list.length > 5 ? '...' : '') + '</div>';
+      }
+    } else if (type === 'smelt') {
+      line('热量', item.Heat);
+      line('产物ID', item.Result);
+      line('经验', item.Exp);
+      if (item.ExpOdds !== undefined) line('经验概率', (item.ExpOdds / 10) + '%');
+      line('权重', item.Score);
+    } else if (type === 'trade') {
+      line('NPC ID', item.NpcID);
+      line('分组', item.GroupID);
+      if (item.TradeType !== undefined) line('交易类型', item.TradeType === 0 ? '收购' : '出售');
+      if (item.NumFloor !== undefined && item.NumCeil !== undefined) line('数量', item.NumFloor + ' ~ ' + item.NumCeil);
+      if (item.PriceFloor !== undefined && item.PriceCeil !== undefined) line('价格', item.PriceFloor + ' ~ ' + item.PriceCeil);
+      line('单价', item.Price);
+      line('锁定', item.LockNum);
+      line('权重', item.Weight);
+    } else if (type === 'achieve') {
+      if (item.Desc) html += '<div class="result-desc">描述: ' + renderColorCodes(item.Desc) + '</div>';
+      if (item.TrackDesc) html += '<div class="result-desc">追踪: ' + renderColorCodes(item.TrackDesc) + '</div>';
+      line('目标', item.Goal);
+      line('目标数量', item.GoalNum);
+      line('目标ID', item.GoalId);
+      line('点数', item.Point);
+      line('分组', item.Group);
+      line('类型', item.Type);
+      bool('组成就', item.IsGroup);
+      if (item.GridX !== undefined && item.GridY !== undefined) line('网格', '(' + item.GridX + ', ' + item.GridY + ')');
+      line('图标ID', item.IconID);
+      if (item.FrontIDs && item.FrontIDs.length) {
+        var fronts = item.FrontIDs.filter(function(id) { return id > 0; });
+        if (fronts.length) line('前置', fronts.join(', '));
+      }
+      if (item.Rewards && item.Rewards.length) {
+        var rw = item.Rewards.map(function(r) {
+          var t = r.RewardType === 1 ? '金币' : ('类型' + r.RewardType);
+          return t + '×' + r.RewardNum;
+        }).join(', ');
+        html += '<div class="result-desc">奖励: ' + escapeHtml(rw) + '</div>';
+      }
+    }
+    return html;
+  }
+
+    function renderAchievements(items) {
+    var body = document.getElementById('resultBody');
+    body.innerHTML = '';
+    if (!items || !items.length) {
+      body.innerHTML = '<div class="empty-state"><span class="icon-emoji">🏆</span><p class="empty-text">暂无成就数据</p></div>';
+      return;
+    }
+
+    // 按 Group 分组
+    var groups = {};
+    items.forEach(function(item) {
+      var g = item.Group || 0;
+      if (!groups[g]) groups[g] = [];
+      groups[g].push(item);
+    });
+
+    // 创建容器
+    var container = document.createElement('div');
+    container.className = 'achievement-container';
+    container.style.cssText = 'position:relative;min-height:400px;overflow:auto;';
+
+    // 计算网格范围
+    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    items.forEach(function(item) {
+      if (item.GridX !== undefined) { minX = Math.min(minX, item.GridX); maxX = Math.max(maxX, item.GridX); }
+      if (item.GridY !== undefined) { minY = Math.min(minY, item.GridY); maxY = Math.max(maxY, item.GridY); }
+    });
+    if (minX === Infinity) { minX = 0; maxX = 0; minY = 0; maxY = 0; }
+
+    var cellSize = 80;
+    var padding = 20;
+    container.style.width = ((maxX - minX + 1) * cellSize + padding * 2) + 'px';
+    container.style.height = ((maxY - minY + 1) * cellSize + padding * 2) + 'px';
+
+    // 绘制连线（前置关系）
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+
+    items.forEach(function(item) {
+      if (item.FrontIDs && item.FrontIDs.length) {
+        item.FrontIDs.forEach(function(fid) {
+          if (fid <= 0) return;
+          var parent = items.find(function(it) { return it.ID === fid; });
+          if (parent && parent.GridX !== undefined && parent.GridY !== undefined && item.GridX !== undefined && item.GridY !== undefined) {
+            var x1 = (parent.GridX - minX) * cellSize + cellSize / 2 + padding;
+            var y1 = (parent.GridY - minY) * cellSize + cellSize / 2 + padding;
+            var x2 = (item.GridX - minX) * cellSize + cellSize / 2 + padding;
+            var y2 = (item.GridY - minY) * cellSize + cellSize / 2 + padding;
+            var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+            line.setAttribute('stroke', '#cbd5e1');
+            line.setAttribute('stroke-width', '2');
+            svg.appendChild(line);
+          }
+        });
+      }
+    });
+    container.appendChild(svg);
+
+    // 绘制成就节点
+    items.forEach(function(item) {
+      if (item.GridX === undefined || item.GridY === undefined) return;
+      var node = document.createElement('div');
+      node.className = 'achievement-node';
+      node.style.cssText = 'position:absolute;width:60px;height:60px;background:#fff;border:2px solid #e2e8f0;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;z-index:1;box-shadow:0 2px 8px rgba(0,0,0,0.06);';
+      node.style.left = ((item.GridX - minX) * cellSize + padding + 10) + 'px';
+      node.style.top = ((item.GridY - minY) * cellSize + padding + 10) + 'px';
+
+      // 图标
+      var icon = document.createElement('div');
+      icon.style.cssText = 'width:28px;height:28px;background:var(--primary-light);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:2px;';
+      icon.textContent = (item.Name || item.col_2 || '').substring(0, 2) || '🏆';
+      node.appendChild(icon);
+
+      // 名称
+      var name = document.createElement('div');
+      name.style.cssText = 'font-size:9px;color:#475569;text-align:center;line-height:1.2;max-width:56px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      name.textContent = item.Name || item.col_2 || '';
+      node.appendChild(name);
+
+      // 点击显示详情
+      node.addEventListener('click', function() {
+        showAchievementDetail(item);
+      });
+
+      node.addEventListener('mouseenter', function() { this.style.borderColor = 'var(--primary)'; this.style.transform = 'scale(1.05)'; });
+      node.addEventListener('mouseleave', function() { this.style.borderColor = '#e2e8f0'; this.style.transform = 'scale(1)'; });
+
+      container.appendChild(node);
+    });
+
+    body.appendChild(container);
+  }
+
+  function showAchievementDetail(item) {
+    var detail = document.createElement('div');
+    detail.className = 'achievement-detail';
+    detail.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.15);z-index:3000;max-width:320px;width:90%;';
+
+    var rewardsHtml = '';
+    if (item.Rewards && item.Rewards.length) {
+      rewardsHtml = '<div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #eef1f5;">' +
+        item.Rewards.map(function(r) {
+          var t = r.RewardType === 1 ? '金币' : ('类型' + r.RewardType);
+          return '<div style="font-size:0.75rem;color:#64748b;">🎁 ' + t + ' × ' + r.RewardNum + '</div>';
+        }).join('') + '</div>';
+    }
+
+    var frontHtml = '';
+    if (item.FrontIDs && item.FrontIDs.length) {
+      var fronts = item.FrontIDs.filter(function(id) { return id > 0; });
+      if (fronts.length) frontHtml = '<div style="font-size:0.75rem;color:#94a3b8;margin-top:0.5rem;">前置: ' + fronts.join(', ') + '</div>';
+    }
+
+    detail.innerHTML = 
+      '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">' +
+        '<div style="width:48px;height:48px;background:var(--primary-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;">🏆</div>' +
+        '<div><div style="font-size:1.1rem;font-weight:600;color:#1e293b;">' + escapeHtml(item.Name || item.col_2 || '') + '</div>' +
+        '<div style="font-size:0.7rem;color:#94a3b8;">ID: ' + item.ID + ' · 点数: ' + (item.Point || 0) + '</div></div>' +
+      '</div>' +
+      (item.Desc ? '<div style="font-size:0.8rem;color:#475569;margin-bottom:0.5rem;line-height:1.5;">' + renderColorCodes(item.Desc) + '</div>' : '') +
+      (item.TrackDesc ? '<div style="font-size:0.75rem;color:#64748b;background:#f8fafc;padding:0.5rem;border-radius:6px;margin-bottom:0.5rem;">📍 ' + renderColorCodes(item.TrackDesc) + '</div>' : '') +
+      '<div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.75rem;color:#64748b;">' +
+        (item.Goal !== undefined ? '<span>目标: ' + item.Goal + '</span>' : '') +
+        (item.GoalNum !== undefined ? '<span>数量: ' + item.GoalNum + '</span>' : '') +
+        (item.Group !== undefined ? '<span>分组: ' + item.Group + '</span>' : '') +
+        (item.Type !== undefined ? '<span>类型: ' + item.Type + '</span>' : '') +
+      '</div>' +
+      frontHtml + rewardsHtml +
+      '<button style="margin-top:1rem;width:100%;padding:0.5rem;background:var(--primary);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:0.8rem;">关闭</button>';
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:2999;';
+    overlay.addEventListener('click', function() { detail.remove(); overlay.remove(); });
+    detail.querySelector('button').addEventListener('click', function() { detail.remove(); overlay.remove(); });
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(detail);
+  }
+
+  function renderResults(items, query) {
+    var body = document.getElementById('resultBody');
+    body.innerHTML = '';
+    if (!items || !items.length) {     setCount('');
+      body.innerHTML = '<div class="empty-state"><span class="icon-emoji">🚫</span><p class="empty-text">没有匹配结果' + (query ? '：<b>' + escapeHtml(query) + '</b>' : '') + '</p></div>';
+      return;
+    }
+    setCount(items.length + ' 条结果');
+    var frag = document.createDocumentFragment();
+    if (currentContentType === 'achieve' && currentView === 'grid') {
+      renderAchievements(items);
+      return;
+    }
+    items.forEach(function(item, i) {
+      var name = item.Name || item.col_2 || '';
+      var id = String(item.ID !== undefined ? item.ID : '');
+      var desc = item.Desc || '';
+      var descHtml = desc ? '<div class="result-desc">' + renderColorCodes(desc) + '</div>' : '';
+      var extra = renderExtra(currentContentType, item);
+      var el = document.createElement('div');
+      el.className = 'result-item';
+      el.style.animationDelay = (i * 0.05) + 's';
+      el.innerHTML = '<div class="result-info"><div class="result-name">' + escapeHtml(name) + '</div><div class="result-id">ID：' + escapeHtml(id) + '</div>' + descHtml + extra + '</div>';
+      frag.appendChild(el);
+    });
+    body.appendChild(frag);
+  }
+
+  function doSearch() {
+    var query = document.getElementById('nameInput').value.trim();
+    if (!query) { showSnackbar('请输入搜索内容', 'error'); return; }
+    setStatus('查询中...');
+    var items = getItems();
+    var results = [];
+    var isNum = /^\d+$/.test(query);
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i], matched = false;
+      if (item.Name && item.Name.indexOf(query) !== -1) matched = true;
+      if (!matched && item.col_2 && item.col_2.indexOf(query) !== -1) matched = true;
+      if (!matched && item.Desc && item.Desc.indexOf(query) !== -1) matched = true;
+      if (!matched && item.TrackDesc && item.TrackDesc.indexOf(query) !== -1) matched = true;
+      if (!matched && item.ID !== undefined) {
+        var sid = String(item.ID);
+        if (isNum) { if (sid === query || sid.indexOf(query) === 0) matched = true; }
+        else { if (sid.indexOf(query) !== -1) matched = true; }
+      }
+      if (matched) results.push(item);
+    }
+    if (isNum) results.sort(function(a, b) { return (a.ID || 0) - (b.ID || 0); });
+    renderResults(results, query);
+    setStatus('找到 ' + results.length + ' 条结果');
+  }
+
+  function doClear() {
+    document.getElementById('nameInput').value = '';
+    displayDefaultItems();
+    setStatus('');
+    document.getElementById('nameInput').focus();
+  }
+
+  function displayDefaultItems() {
+    var items = getItems().slice();
+    items.sort(function(a, b) { return (a.ID || 0) - (b.ID || 0); });
+    renderResults(items, '');
+    var label = (CONFIG[currentContentType] || CONFIG.block).label;
+    setCount(items.length + ' 个' + label);
+    setStatus('显示全部' + label + '列表');
+  }
+
+  // Event listeners
+  document.getElementById('searchBtn').addEventListener('click', doSearch);
+  document.getElementById('clearBtn').addEventListener('click', doClear);
+  document.getElementById('clearInputBtn').addEventListener('click', function() {
+    document.getElementById('nameInput').value = '';
+    displayDefaultItems();
+    setStatus('');
+    setCount('');
+    document.getElementById('nameInput').focus();
+  });
+  document.getElementById('nameInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') doSearch(); });
+  document.getElementById('nameInput').addEventListener('input', function() {
+    clearTimeout(searchTimer);
+    var q = document.getElementById('nameInput').value.trim();
+    if (!q) { displayDefaultItems(); return; }
+    searchTimer = setTimeout(doSearch, 300);
+  });
+  document.getElementById('refreshBtn').addEventListener('click', function() { location.reload(); });
+  document.getElementById('backBtn').addEventListener('click', function() { window.location.href = 'index.html'; }); // ← 修改这里为第一个页面的文件名
+
+  document.querySelectorAll('.version-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var type = this.dataset.type;
+      setContentType(type);
+      loadData(type).then(displayDefaultItems);
+    });
+  });
+
+  document.querySelectorAll('.view-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      currentView = this.dataset.view;
+      localStorage.setItem('achieve-view', currentView);
+      document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      displayDefaultItems();
+    });
+  });
+
+  // Init
+  if (!CONFIG[currentContentType]) currentContentType = 'block';
+  document.querySelectorAll('.view-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.view === currentView);
+  });
+  loadData(currentContentType).then(function() {
+    setContentType(currentContentType);
+    displayDefaultItems();
+  });
+</script>
+</body>
+</html>
